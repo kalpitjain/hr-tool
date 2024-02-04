@@ -8,6 +8,12 @@ This repository contains the code for a basic recruiter tool, a Full Stack Devel
   git clone https://github.com/kalpitjain/hr-tool.git
 ```
 
+**Navigate to the frontend directory**
+
+```bash
+  cd hr-tool
+```
+
 ### Frontend:
 
 **Step 1:** Navigate to the frontend directory
