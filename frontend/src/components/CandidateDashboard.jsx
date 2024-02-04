@@ -41,11 +41,18 @@ const CandidateDashboard = ({ email }) => {
 
   const handleUpdate = async () => {
     try {
-      console.log(candidate);
+      const updatedCandidate = {
+        ...candidate,
+        ...formData,
+      };
+
+      console.log(updatedCandidate);
+
       const response = await axios.put(
         `https://backend-rose-tau.vercel.app/candidates/${email}`,
-        { ...candidate, formData }
+        updatedCandidate
       );
+
       setCandidate(response.data);
       setIsEditing(false);
       console.log("Candidate updated successfully");

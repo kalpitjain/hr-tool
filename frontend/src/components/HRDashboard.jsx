@@ -41,13 +41,16 @@ const HRDashboard = () => {
         }
       );
 
-      const updatedCandidates = candidates.map((candidate) => {
-        if (candidate.email === email) {
-          return { ...candidate, status: newStatus };
-        }
-        return candidate;
+      setCandidates((prevCandidates) => {
+        return prevCandidates.map((c) => {
+          if (c.email === email) {
+            return { ...c, status: newStatus };
+          }
+          return c;
+        });
       });
-      setCandidates(updatedCandidates);
+
+      console.log("Candidate status updated successfully");
     } catch (error) {
       console.error("Error updating candidate status:", error);
     }
